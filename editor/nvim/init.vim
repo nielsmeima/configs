@@ -1,5 +1,7 @@
+"Fish does not work well with nvim, e.g. :Tutor segfaults with fish ;)"
+set shell=/bin/bash
+
 syntax on
-set cc=80
 set number
 set autoindent
 
@@ -18,4 +20,4 @@ noremap k j
 noremap j h
 
 map J ^
-map : $
+map K $
