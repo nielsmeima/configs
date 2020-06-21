@@ -1,0 +1,5 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/home/nielsmeima/go/src/github.com/rug-ds-lab/msc-2020-planning-reinforcement/src/embedding-model-trainer'
+let g:netrw_dirhist_2='/home/nielsmeima/go/src/github.com/rug-ds-lab/msc-2020-planning-reinforcement/src'
+let g:netrw_dirhist_3='/home/nielsmeima/go/src/github.com/rug-ds-lab/msc-2020-planning-reinforcement/src/embedding-model-trainer'
