@@ -92,11 +92,8 @@ let g:coc_global_extensions = ['coc-tsserver', 'coc-go', 'coc-json', 'coc-python
 
 autocmd vimenter * colorscheme gruvbox
 
-let g:rooter_patterns = ['.git/', 'package.json', 'Pipfile', 'go.mod']
-
-augroup vimrc_rooter
-	autocmd VimEnter * :Rooter
-augroup END
+let g:rooter_patterns = ['package.json', 'Pipfile', 'go.mod', '.git/']
+autocmd vimenter * :Rooter
 
 " <leader><leader> toggles between buffers
 nnoremap <leader><leader> <c-^>
