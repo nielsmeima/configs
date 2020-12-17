@@ -13,7 +13,7 @@ set hidden
 set nobackup
 set nowritebackup
 
-set cmdheight=1
+set cmdheight=2
 set updatetime=300
 set shortmess+=c
 
@@ -80,20 +80,32 @@ call plug#begin('~/.vim/plugged')
 Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
 Plug 'airblade/vim-rooter'
 Plug 'leafgarland/typescript-vim'
+Plug 'stephpy/vim-yaml'
+Plug 'rust-lang/rust.vim'
+Plug 'lervag/vimtex'
+"Plug 'godlygeek/tabular'
+"Plug 'plasticboy/vim-markdown'
+"Plug 'machakann/vim-highlightedyank'
+"Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
 let g:coc_global_extensions = ['coc-tsserver', 'coc-go', 'coc-json', 'coc-python']
 
+let g:airline_theme='powerlineish'
+
 autocmd vimenter * colorscheme gruvbox
 
-let g:rooter_patterns = ['package.json', 'Pipfile', 'go.mod', '.git/']
+let g:rooter_patterns = ['main.tex', 'package.json', 'Pipfile', 'go.mod', '.git/']
 autocmd vimenter * :Rooter
 
 " <leader><leader> toggles between buffers
 nnoremap <leader><leader> <c-^>
+
+let g:vimtex_compiler_progname = 'nvr'
