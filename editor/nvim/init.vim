@@ -89,10 +89,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'stephpy/vim-yaml'
 Plug 'rust-lang/rust.vim'
 Plug 'lervag/vimtex'
-"Plug 'godlygeek/tabular'
-"Plug 'plasticboy/vim-markdown'
-"Plug 'machakann/vim-highlightedyank'
-"Plug 'itchyny/lightline.vim'
+Plug 'ekalinin/Dockerfile.vim'
 
 call plug#end()
 
