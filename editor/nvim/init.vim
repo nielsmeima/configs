@@ -69,6 +69,12 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
 nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
@@ -107,8 +113,16 @@ Plug 'lervag/vimtex'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'preservim/nerdtree'
+Plug 'junegunn/vim-easy-align'
 
 call plug#end()
+
+function! g:OpenChromeWSL(url)
+	silent execute ":! chrome_wsl ". a:url
+endfunction
+
+let g:mkdp_browserfunc = 'OpenChromeWSL'
+let g:mkdp_markdown_css = expand('~/configs/github-markdown.css')
 
 let g:coc_global_extensions = ['coc-tsserver', 'coc-go', 'coc-json', 'coc-python']
 
@@ -123,3 +137,5 @@ autocmd vimenter * :Rooter
 nnoremap <leader><leader> <c-^>
 
 let g:vimtex_compiler_progname = 'nvr'
+
+set shellcmdflag=-ic
