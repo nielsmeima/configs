@@ -20,19 +20,6 @@ set shortmess+=c
 set signcolumn=yes
 
 set clipboard+=unnamedplus
-"WSL specific
-let g:clipboard = {
-          \   'name': 'win32yank-wsl',
-          \   'copy': {
-          \      '+': 'win32yank.exe -i --crlf',
-          \      '*': 'win32yank.exe -i --crlf',
-          \    },
-          \   'paste': {
-          \      '+': 'win32yank.exe -o --lf',
-          \      '*': 'win32yank.exe -o --lf',
-          \   },
-          \   'cache_enabled': 0,
-          \ }
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
@@ -102,7 +89,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
 Plug 'airblade/vim-rooter'
@@ -114,15 +101,10 @@ Plug 'ekalinin/Dockerfile.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'preservim/nerdtree'
 Plug 'junegunn/vim-easy-align'
+Plug 'tpope/vim-obsession'
 
 call plug#end()
 
-function! g:OpenChromeWSL(url)
-	silent execute ":! chrome_wsl ". a:url
-endfunction
-
-let g:mkdp_browserfunc = 'OpenChromeWSL'
-let g:mkdp_markdown_css = expand('~/configs/github-markdown.css')
 
 let g:coc_global_extensions = ['coc-tsserver', 'coc-go', 'coc-json', 'coc-python']
 
