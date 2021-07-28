@@ -160,7 +160,10 @@ complete -F __start_kubectl k
 # ==================== Util ======================================
 
 # markdown
-alias er="nvim -c MarkdownPreview ./README.md"
+em() {
+	nvim -c MarkdownPreview $1
+}
+alias er="em ./README.md"
 
 # git
 alias gtr='git branch -r | grep -v "\->" | while read remote; do git branch --track "${remote#origin/}" "$remote"; done'
