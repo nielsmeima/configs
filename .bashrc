@@ -88,9 +88,8 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+alias ll='exa -alF'
+alias l='exa -CF'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -117,6 +116,7 @@ if ! shopt -oq posix; then
 fi
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="/home/nielsmeima/.local/bin/:$PATH"
+export PATH="/usr/local/julia-1.6.2/bin:$PATH"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 source <(kubectl completion bash)
@@ -137,8 +137,48 @@ source /home/nielsmeima/.local/lib/python3.8/site-packages/powerline/bindings/ba
 alias aa="cd ~/projects/auto-adapt/adaptation/"
 alias caq="cd ~/projects/erp-caq/forecasting/"
 
-export DISPLAY=`grep -oP "(?<=nameserver ).+" /etc/resolv.conf`:0.0
+#export DISPLAY=`grep -oP "(?<=nameserver ).+" /etc/resolv.conf`:0.0
 export EDITOR="nvim"
 alias vi="nvim"
 alias vim="nvim"
+
+. "$HOME/.cargo/env"
+
+alias chrome_wsl="/mnt/c/Users/meiman/AppData/Local/Google/Chrome/Application/chrome.exe"
+
+
+alias er="nvim -c MarkdownPreview ./README.md"
+
+alias cmd.exe=/mnt/c/Windows/System32/cmd.exe
+
+function y { export PROJECT_PATH=`pwd` && (cd ../landscapeapp && yarn run "$@")}
+export -f y
+# yf does a normal build and full test run
+alias yf='y fetch'
+alias yl='y check-links'
+alias yq='y remove-quotes'
+# yp does a build and then opens up the landscape in your browser ( can view the PDF and PNG files )
+alias yp='y build && y open:dist'
+# yo does a quick build and opens up the landscape in your browser
+alias yo='y open:src'
+alias a='for lpath in /Users/your-username/dev/{landscapeapp,cdf-landscape,lfai-landscape}; do echo $lpath; git -C $lpath pull -p; done; (cd /Users/your-username/dev/landscapeapp && yarn);'
+
+alias gtr='git branch -r | grep -v "\->" | while read remote; do git branch --track "${remote#origin/}" "$remote"; done'
+# git delete branch: deletes a branch both locally and remotely
+gdb() {
+	read -r -p "Are you sure? [y/N] " response
+	response=${response,,} 
+	if [[ "$response" =~ ^(yes|y)$ ]]; 
+	then
+		echo "deleting branch '$1'" 
+		git branch -d $1
+		git push origin --delete $1
+	fi
+}
+
+export KUBECONFIG=/home/nielsmeima/.kube/config:/home/nielsmeima/projects/auto-adapt/config
+
+export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0.0
+export LIBGL_ALWAYS_INDIRECT=1
+
 
