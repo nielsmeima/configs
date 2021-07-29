@@ -53,10 +53,10 @@ vim.api.nvim_set_keymap("n", "<down>" , "<nop>", options)
 vim.api.nvim_set_keymap("n", "<left>" , "<nop>", options)
 vim.api.nvim_set_keymap("n", "<right>", "<nop>", options)
 vim.api.nvim_set_keymap("n", "<C-p>"  , ":Files<Cr>", options)
-vim.api.nvim_set_keymap("n", ";", "l", options)
-vim.api.nvim_set_keymap("n", "l", "k", options)
-vim.api.nvim_set_keymap("n", "k", "j", options)
-vim.api.nvim_set_keymap("n", "j", "h", options)
+vim.api.nvim_set_keymap("", ";", "l", options)
+vim.api.nvim_set_keymap("", "l", "k", options)
+vim.api.nvim_set_keymap("", "k", "j", options)
+vim.api.nvim_set_keymap("", "j", "h", options)
 vim.api.nvim_set_keymap("n", "J", "^", options)
 vim.api.nvim_set_keymap("n", "K", "$", options)
 vim.api.nvim_set_keymap("n", "<leader><leader>", "<c-^>", options)
@@ -69,9 +69,34 @@ vim.api.nvim_command([[
 autocmd vimenter * colorscheme gruvbox
 ]])
 
-require('lualine').setup()
 
-
+require'lualine'.setup {
+  options = {
+    icons_enabled = true,
+    theme = 'gruvbox',
+    component_separators = {'', ''},
+    section_separators = {'', ''},
+    disabled_filetypes = {}
+  },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch'},
+    lualine_c = {'filename'},
+    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = {'filename'},
+    lualine_x = {'location'},
+    lualine_y = {},
+    lualine_z = {}
+  },
+  tabline = {},
+  extensions = {}
+}
 -- TODO: treesitter
 
 
