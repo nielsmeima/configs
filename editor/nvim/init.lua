@@ -1,4 +1,3 @@
--- TODO: all functionality and mappings currently in my init.vim (set, inoremap, functions, etc.)
 local vim = vim
 
 -- Plugins
