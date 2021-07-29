@@ -124,7 +124,7 @@ if [ -f `which powerline-daemon` ]; then
     POWERLINE_BASH_CONTINUATION=1
     POWERLINE_BASH_SELECT=1
 fi
-source /home/nielsmeima/.local/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh
+#source /home/nielsmeima/.local/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh
 
 
 export EDITOR="nvim"

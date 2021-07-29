@@ -66,22 +66,23 @@ nnoremap <up> <nop>
 nnoremap <down> <nop>
 nnoremap <left> <nop>
 nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
+" Ctrl+P for file selection
+nnoremap <C-p> :Files<Cr>
 
 noremap ; l
 noremap l k
 noremap k j
 noremap j h
 
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
 map J ^
 map K $
 
 
-" Ctrl+P for file selection
-nnoremap <C-p> :Files<Cr>
 
 call plug#begin('~/.vim/plugged')
 
