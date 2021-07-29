@@ -183,6 +183,11 @@ gdb() {
 alias ll='exa -alF'
 alias l='exa -CF'
 
+# finding with fd
+alias find=fd
+complete -F __start_fd f
+
+
 # ==================== Windows / WSL specific ====================
 alias cmd.exe=/mnt/c/Windows/System32/cmd.exe
 alias chrome_wsl="/mnt/c/Users/meiman/AppData/Local/Google/Chrome/Application/chrome.exe"
