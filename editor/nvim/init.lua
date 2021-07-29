@@ -1,6 +1,25 @@
 -- TODO: all functionality and mappings currently in my init.vim (set, inoremap, functions, etc.)
 local vim = vim
 
+-- Plugins
+local paq = require("paq")
+paq {
+	"avq/paq-nvim";
+	"jiangmiao/auto-pairs";
+	"morhetz/gruvbox";
+	{"iamcco/markdown-preview.nvim", run = "cd app && yarn install"};
+	"junegunn/vim-easy-align";
+	"tpope/vim-obsession";
+	"glepnir/galaxyline.nvim";
+	{"kyazdani42/nvim-web-devicons", opt = true};
+	{"nvim-treesitter/nvim-treesitter", run = function() vim.cmd(":TSUpdate") end};
+	{"neovim/nvim-lspconfig"};
+	"nvim-lua/popup.nvim";
+	"nvim-lua/plenary.nvim";
+	"nvim-telescope/telescope.nvim";
+	{"nvim-telescope/telescope-fzf-native.nvim", run = "make"};
+}
+
 -- Settings
 vim.cmd('colorscheme gruvbox')
 vim.cmd('syntax on')
@@ -33,24 +52,6 @@ vim.wo.signcolumn = "yes"
 
 -- Copy indent from current line when starting new line
 vim.bo.autoindent = true
-
--- Plugins with paq
-local paq = require("paq")
-paq {
-	"avq/paq-nvim";
-	"jiangmiao/auto-pairs";
-	"morhetz/gruvbox";
-	{"iamcco/markdown-preview.nvim", run = "cd app && yarn install"};
-	"junegunn/vim-easy-align";
-	"tpope/vim-obsession";
-	"glepnir/galaxyline.nvim";
-	{"kyazdani42/nvim-web-devicons", opt = true};
-	{"nvim-treesitter/nvim-treesitter", run = function() vim.cmd(":TSUpdate") end};
-	{"neovim/nvim-lspconfig"};
-	"nvim-lua/popup.nvim";
-	"nvim-lua/plenary.nvim";
-	"nvim-telescope/telescope.nvim";
-}
 
 -- Mappings
 options = { noremap = true }
@@ -180,6 +181,14 @@ require('telescope').setup{
 
     -- Developer configurations: Not meant for general override
     buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
+  },
+  extensions = {
+	  fzf = {
+		  fuzzy = true,
+		  override_generic_sorter = true,
+		  override_file_sorter = true,
+		  case_mode = "smart_case"
+	  }
   }
 }
 

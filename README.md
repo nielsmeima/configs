@@ -12,3 +12,4 @@
 * [ ] Figure out how to deal with different use names (template dotfiles with correct username? There must be a better way...)
 * [ ] Figure out how to deal with private stuff / customizations per installation
 * [ ] Automate setup of getting `nvim` ready to edit (installing plugins etc.)
+* [ ] Customize alacritty.yml with Kustomize for windows and linux (shell section)
