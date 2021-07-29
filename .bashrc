@@ -147,6 +147,7 @@ alias vim="nvim"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="/home/nielsmeima/.local/bin/:$PATH"
 export PATH="/usr/local/julia-1.6.2/bin:$PATH"
+export PATH="/usr/local/go/bin:$PATH"
 
 
 # ==================== Kubernetes ================================
