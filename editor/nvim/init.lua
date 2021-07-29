@@ -1,7 +1,21 @@
 -- TODO: all functionality and mappings currently in my init.vim (set, inoremap, functions, etc.)
 local vim = vim
 
+-- Plugins
+local paq = require("paq")
+paq {
+	"avq/paq-nvim";
+	"jiangmiao/auto-pairs";
+	"morhetz/gruvbox";
+	{"iamcco/markdown-preview.nvim", run="cd app && yarn install"};
+	"junegunn/vim-easy-align";
+	"tpope/vim-obsession";
+	"hoob3rt/lualine.nvim";
+	{"kyazdani42/nvim-web-devicons", opt = true}
+}
 
+
+-- Settings
 vim.cmd('colorscheme gruvbox')
 vim.cmd('syntax on')
 
@@ -33,18 +47,6 @@ vim.wo.signcolumn = "yes"
 
 -- Copy indent from current line when starting new line
 vim.bo.autoindent = true
-
-local paq = require("paq")
-paq {
-	"avq/paq-nvim";
-	"jiangmiao/auto-pairs";
-	"morhetz/gruvbox";
-	{"iamcco/markdown-preview.nvim", run="cd app && yarn install"};
-	"junegunn/vim-easy-align";
-	"tpope/vim-obsession";
-	"hoob3rt/lualine.nvim";
-	{"kyazdani42/nvim-web-devicons", opt = true}
-}
 
 options = { noremap = true }
 vim.api.nvim_set_keymap("n", "<up>"   , "<nop>", options)
