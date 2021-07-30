@@ -8,7 +8,6 @@ paq {
 	{"iamcco/markdown-preview.nvim", run = function() vim.fn("mkdp#util#install()") end};
 	"junegunn/vim-easy-align";
 	"tpope/vim-obsession";
-	--"glepnir/galaxyline.nvim";
 	{"nvim-treesitter/nvim-treesitter", run = function() vim.cmd(":TSUpdate") end};
 	{"neovim/nvim-lspconfig"};
 	"nvim-lua/popup.nvim";
@@ -18,14 +17,13 @@ paq {
 	"windwp/nvim-autopairs";
 	"hrsh7th/nvim-compe";
 	"hoob3rt/lualine.nvim";
-	--{"kyazdani42/nvim-web-devicons", opt = true};
-	"kyazdani42/nvim-web-devicons";
-	'ryanoasis/vim-devicons';
+	{"kyazdani42/nvim-web-devicons", opt = true};
 }
 
--- -- Settings
+----------
+-- Settings
 vim.cmd("colorscheme gruvbox")
-vim.cmd("set clipboard=unnamedplus")
+vim.cmd("set clipboard^=unnamed,unnamedplus")
 vim.cmd("syntax on")
  
 vim.g.mapleader = " "
@@ -303,6 +301,7 @@ require"nvim-web-devicons".setup {
  -- will get overriden by `get_icons` option
  default = true;
 }
+
 
 -- Lualine
 require"lualine".setup {
