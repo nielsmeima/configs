@@ -4,7 +4,7 @@
 	* https://gruby.medium.com/dotfile-how-to-manage-and-sync-with-git-gnu-stow-6beada1529ea
 	* [Video](https://www.youtube.com/watch?v=tkUllCAGs3c)
 
-
+* [ ] Sync nvim yank buffer with system clipboard correctly
 * [ ] Use something like ansible together with stow to install all needed applications, setting repo's etc.
 * [ ] Put aliases in separate aliases file
 * [ ] Switch to `zsh`?

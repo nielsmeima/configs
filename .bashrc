@@ -186,8 +186,8 @@ alias l='exa -CF'
 alias ls=ll
 
 # finding with fd
-alias find=fd
-complete -F __start_fd f
+#alias find=fd
+complete -F __start_fd fd
 
 
 # ==================== Windows / WSL specific ====================
