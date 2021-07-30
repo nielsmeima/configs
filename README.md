@@ -7,7 +7,6 @@
 * [ ] Customize bashrc for WSL/Linux
 	* [ ] Figure out how to deal with platform differences, e.g. keep WSL stuff separate from Linux stuff
 	* [ ] DISPLAY variable (needs to be unset on Linux, needs to be set on WSL to a specific Windows Network Adapter IP)
-* [ ] Install FireMono NF on Linux and set as default
 * [ ] Write `install` scripts which (IDEA: I want to be able to do `curl -sfL https://get.meima.dev | sh -` to install my entire setup):
 	1. Installs `ansible`
 	2. Executes the required playbooks (ensure that we can easily install the "minimal viable setup", e.g. only shell, editor, etc. stuff
