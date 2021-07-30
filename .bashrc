@@ -183,6 +183,7 @@ gdb() {
 # listing
 alias ll='exa -alF'
 alias l='exa -CF'
+alias ls=ll
 
 # finding with fd
 alias find=fd
