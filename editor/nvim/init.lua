@@ -5,7 +5,7 @@ local paq = require("paq")
 paq {
 	"avq/paq-nvim";
 	"morhetz/gruvbox";
-	{"iamcco/markdown-preview.nvim", run = "cd app && yarn install"};
+	{"iamcco/markdown-preview.nvim", run = function() vim.fn("mkdp#util#install()") end};
 	"junegunn/vim-easy-align";
 	"tpope/vim-obsession";
 	"glepnir/galaxyline.nvim";
@@ -109,9 +109,9 @@ local on_attach = function(client, bufnr)
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  --buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  buf_set_keymap('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
   buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
   buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
   buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
@@ -227,12 +227,12 @@ require'compe'.setup {
   source = {
     path = true;
     buffer = true;
-    calc = true;
+    calc = false;
     nvim_lsp = true;
     nvim_lua = true;
-    vsnip = true;
-    ultisnips = true;
-    luasnip = true;
+    vsnip = false;
+    ultisnips = false;
+    luasnip = false;
   };
 }
 
@@ -260,8 +260,6 @@ end
 _G.tab_complete = function()
   if vim.fn.pumvisible() == 1 then
     return t "<C-n>"
-  elseif vim.fn['vsnip#available'](1) == 1 then
-    return t "<Plug>(vsnip-expand-or-jump)"
   elseif check_back_space() then
     return t "<Tab>"
   else
@@ -271,8 +269,6 @@ end
 _G.s_tab_complete = function()
   if vim.fn.pumvisible() == 1 then
     return t "<C-p>"
-  elseif vim.fn['vsnip#jumpable'](-1) == 1 then
-    return t "<Plug>(vsnip-jump-prev)"
   else
     -- If <S-Tab> is not working in your terminal, change it to <C-h>
     return t "<S-Tab>"
@@ -286,7 +282,7 @@ vim.api.nvim_set_keymap("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
 
 -- Autopairs
 require("nvim-autopairs.completion.compe").setup({
-  map_cr = true, --  map <CR> on insert mode
+  map_cr = true,
   map_complete = true -- it will auto insert `(` after select function or method item
 })
 
