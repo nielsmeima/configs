@@ -81,10 +81,15 @@
 	* [ ] `wireguard`
 	* [ ] `jq`
 	* [ ] `pgcli`
-* [ ] Switch to `zsh`?
+* [ ] Switch to `fish`?
 * [ ] Figure out how to deal with different use names (template dotfiles with correct username? There must be a better way...)
 * [ ] Figure out how to deal with private stuff / customizations per installation
 	* Use branches for customizations?
 	* Use private submodules for private stuff?
 	* Customize alacritty.yml with Kustomize for windows and linux (shell section)?
 	* e.g. KUBEPATH for kube configs
+* [ ] Start using a WM (bspwm?)
+	* [Github](https://github.com/baskerville/bspwm)
+	* [Jonhoo's bspwmrc](https://github.com/jonhoo/configs/blob/master/gui/.config/bspwm/bspwmrc)
+* [ ] Have a look at polybar
+	* [Github](https://github.com/polybar/polybar)
