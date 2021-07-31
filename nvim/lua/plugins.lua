@@ -4,11 +4,14 @@
 local execute = vim.api.nvim_command
 local fn = vim.fn
 
-local install_path = fn.stdpath('data')..'/site/pack/paqs/start/paq-nvim'
+local install_path = fn.stdpath("data").."/site/pack/paqs/start/paq-nvim"
 
 if fn.empty(fn.glob(install_path)) > 0 then
-  fn.system({'git', 'clone', '--depth=1', 'https://github.com/savq/paq-nvim.git', install_path})
-  execute 'packadd paq-nvim'
+  fn.system({"git", "clone", "--depth=1", "https://github.com/savq/paq-nvim.git", install_path})
+  execute("packadd paq-nvim")
+  -- Assume that if paq cannot be found, we also have not installed packages yet
+  -- Attempt to install packages automatically (NB: :PaqSync does :PaqInstall, :PaqUpdate and :PaqClean)
+  execute(":PaqSync")
 end
 
 
@@ -20,7 +23,8 @@ paq {
 	"junegunn/vim-easy-align";
 	"tpope/vim-obsession";
 	{"nvim-treesitter/nvim-treesitter", run = function() vim.cmd(":TSUpdate") end};
-	{"neovim/nvim-lspconfig"};
+	"neovim/nvim-lspconfig";
+	"kabouzeid/nvim-lspinstall";
 	"nvim-lua/popup.nvim";
 	"nvim-lua/plenary.nvim";
 	"nvim-telescope/telescope.nvim";

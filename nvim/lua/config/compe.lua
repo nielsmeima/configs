@@ -1,6 +1,6 @@
 local map = require('utils').map
 
-require"compe".setup {
+require("compe").setup {
   enabled = true;
   map_cr = true;
   debug = false;
