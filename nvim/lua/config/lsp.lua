@@ -33,23 +33,7 @@ local on_attach = function(client, bufnr)
 
 end
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = { 
-	"bashls", 		-- Bash
-	"ccls", 		-- C, C++, Objective-C
-	"dockerls", 		-- Dockerfile
-	"gopls", 		-- Golang
-	"jsonls", 		-- JSON
-	"julials", 		-- Julia
-	"pyright", 		-- Python
-	"rls",			-- Rust
-	"sqls", 		-- SQL
-	"sumneko_lua",  	-- Lua
-	"texlab",       	-- Latex
-	"tsserver", 		-- TypeScript
-	"yamlls", 		-- YAML
-}
+local servers = require("consts").language_servers
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup {
     on_attach = on_attach,
@@ -58,5 +42,4 @@ for _, lsp in ipairs(servers) do
     }
   }
 end
-
 

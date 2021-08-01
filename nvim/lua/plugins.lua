@@ -18,13 +18,12 @@ end
 local paq = require("paq")
 paq {
 	"avq/paq-nvim";
-	"morhetz/gruvbox";
+	"folke/tokyonight.nvim";
 	{"iamcco/markdown-preview.nvim", run = function() vim.fn("mkdp#util#install()") end};
 	"junegunn/vim-easy-align";
 	"tpope/vim-obsession";
 	{"nvim-treesitter/nvim-treesitter", run = function() vim.cmd(":TSUpdate") end};
 	"neovim/nvim-lspconfig";
-	"kabouzeid/nvim-lspinstall";
 	"nvim-lua/popup.nvim";
 	"nvim-lua/plenary.nvim";
 	"nvim-telescope/telescope.nvim";
@@ -33,4 +32,8 @@ paq {
 	"hrsh7th/nvim-compe";
 	"hoob3rt/lualine.nvim";
 	{"kyazdani42/nvim-web-devicons", opt = true};
+	"mfussenegger/nvim-dap";
+	"nvim-telescope/telescope-dap.nvim";
+	--"rcarriga/nvim-dap-ui"; -- maybe use? preferrably just use tmux
+	"theHamsta/nvim-dap-virtual-text";
 }

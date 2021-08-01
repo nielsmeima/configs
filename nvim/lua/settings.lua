@@ -1,5 +1,6 @@
 
-vim.cmd("colorscheme gruvbox")
+--vim.cmd("colorscheme gruvbox")
+vim.cmd("colorscheme tokyonight")
 vim.cmd("set clipboard^=unnamed,unnamedplus")
 vim.cmd("syntax on")
  
@@ -34,10 +35,3 @@ vim.wo.signcolumn = "yes"
 
 -- Copy indent from current line when starting new line
 vim.bo.autoindent = true
-
-
--- Color theme
-vim.api.nvim_command([[
-autocmd vimenter * colorscheme gruvbox
-]])
-

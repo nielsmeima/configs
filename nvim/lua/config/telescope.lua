@@ -3,13 +3,13 @@ local map = require('utils').map
 require("telescope").setup{
   defaults = {
     vimgrep_arguments = {
-      "grg",
-      "g--color=never",
-      "g--no-heading",
-      "g--with-filename",
-      "g--line-number",
-      "g--column",
-      "g--smart-case"
+      "rg",
+      "--color=never",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--smart-case"
     },
     prompt_prefix = "> ",
     selection_caret = "> ",
@@ -60,4 +60,11 @@ map("n", "<Leader>ff",  [[<Cmd>lua require("telescope.builtin").find_files()<CR>
 map("n", "<Leader>fg",  [[<Cmd>lua require("telescope.builtin").live_grep()<CR>]], options)
 map("n", "<Leader>gf",  [[<Cmd>lua require("telescope.builtin").git_files()<CR>]], options)
 map("n", "<Leader>fb",  [[<Cmd>lua require("telescope.builtin").buffers()<CR>]], options)
+map("n", "<Leader>fc",  [[<Cmd>:TodoTelescope<CR>]], options)
+map("n", "<Leader>qf",  [[<Cmd>:TodoQuickFix<CR>]], options)
 
+-- TODO: find out how to put search results into qflist
+--map("i", "<Leader>qf",  [[<Cmd>lua require("telescope.builtin").quickfix()<CR>]], options)
+
+-- Extensions
+--require("telescope").load_extension("dap")
