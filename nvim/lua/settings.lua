@@ -1,5 +1,4 @@
 
---vim.cmd("colorscheme gruvbox")
 vim.cmd("colorscheme tokyonight")
 vim.cmd("set clipboard^=unnamed,unnamedplus")
 vim.cmd("syntax on")
