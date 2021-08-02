@@ -34,6 +34,6 @@ paq {
 	{"kyazdani42/nvim-web-devicons", opt = true};
 	"mfussenegger/nvim-dap";
 	"nvim-telescope/telescope-dap.nvim";
-	--"rcarriga/nvim-dap-ui"; -- maybe use? preferrably just use tmux
 	"theHamsta/nvim-dap-virtual-text";
+	"sudormrfbin/cheatsheet.nvim";
 }
