@@ -38,4 +38,5 @@ paq {
 	"sudormrfbin/cheatsheet.nvim";
 	"tami5/sql.nvim";
 	"nvim-telescope/telescope-frecency.nvim";
+	"folke/todo-comments.nvim";
 }
