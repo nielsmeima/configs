@@ -36,4 +36,6 @@ paq {
 	"nvim-telescope/telescope-dap.nvim";
 	"theHamsta/nvim-dap-virtual-text";
 	"sudormrfbin/cheatsheet.nvim";
+	"tami5/sql.nvim";
+	"nvim-telescope/telescope-frecency.nvim";
 }
