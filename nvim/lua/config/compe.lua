@@ -69,8 +69,7 @@ end
 local options = {silent = true, expr = true}
 
 -- TODO: fix such that it works with autopairs
--- vim.api.nvim_set_keymap("i", "<CR>", "compe#confirm(luaeval(\"require 'nvim-autopairs'.autopairs_cr()\"))", options)
-map("i", "<CR>", "compe#confirm({ 'keys': '<CR>', 'select': v:true })", { expr = true })
+--map("i", "<CR>", "compe#confirm({ 'keys': '<CR>', 'select': v:true })", { expr = true })
 map("i", "<C-Space>", "compe#complete()", options)
 map("i", "<C-e>", "compe#close('<C-e>')", options)
 map("i", "<C-f>", "compe#scroll({ 'delta': +4 })", options)

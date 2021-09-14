@@ -125,18 +125,11 @@ if [ -f `which powerline-daemon` ]; then
     POWERLINE_BASH_SELECT=1
     source /usr/share/powerline/bindings/bash/powerline.sh
 fi
-#source /home/nielsmeima/.local/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh
 
-
-export EDITOR="nvim"
 alias vi="nvim"
 alias vim="nvim"
 
 [ -s ~/.guild/bash_completion ] && . ~/.guild/bash_completion
-
-
-
-
 
 # NB: everything following now has been sorted a bit, the above is unsorted
 
@@ -152,7 +145,7 @@ export PATH="/usr/local/go/bin:$PATH"
 
 
 # ==================== Kubernetes ================================
-export KUBECONFIG=/home/nielsmeima/.kube/config:/home/nielsmeima/projects/auto-adapt/config:/home/nielsmeima/.kube/ha:/etc/rancher/k3s/k3s.yaml
+export KUBECONFIG=/home/nielsmeima/.kube/config:/home/nielsmeima/projects/auto-adapt/config:/home/nielsmeima/.kube/ha
 
 source <(kubectl completion bash)
 alias k=kubectl
@@ -187,7 +180,7 @@ alias l='exa -CF'
 alias ls=ll
 
 # finding with fd
-#alias find=fd
+alias find=fd
 complete -F __start_fd fd
 
 
@@ -196,8 +189,8 @@ alias cmd.exe=/mnt/c/Windows/System32/cmd.exe
 alias chrome_wsl="/mnt/c/Users/meiman/AppData/Local/Google/Chrome/Application/chrome.exe"
 
 # X Server
-export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0.0
-export LIBGL_ALWAYS_INDIRECT=1
+#export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0.0
+#export LIBGL_ALWAYS_INDIRECT=1
 
 # Podman (we do not have systemd)
 if [[ -z "$XDG_RUNTIME_DIR" ]]; then
@@ -213,6 +206,7 @@ fi
 # ==================== Project aliases ===========================
 alias aa="cd ~/projects/auto-adapt/adaptation/"
 alias caq="cd ~/projects/erp-caq/forecasting/"
+
 . "$HOME/.cargo/env"
 
 alias luamake=/opt/lua-language-server/3rd/luamake/luamake
