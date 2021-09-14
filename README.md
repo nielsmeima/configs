@@ -33,11 +33,12 @@
 			* `em` and `er` for markdown editing in nvim (with correct browser, which is platform specific)
 			* `k` for `kubectl` (also with completions)
 	* [ ] `nvim`
-		* [ ] Automatically `:PaqInstall`, e.g. through `nvim -c ":PaqInstall"
-		* [ ] Automatically runs `:TSInstall` for all our languages (see "Languages and their Language Servers" down below)
-		* [ ] Add all languages to the LSP array
+		* [x] Automatically `:PaqInstall`
+		* [x] Automatically runs `:TSInstall` for all our languages (see "Languages and their Language Servers" down below)
+		* [x] Make a `/lua` directory and nicely split things into modules
+		* [ ] Add all languages to the LSP array and install them automatically
+		* [ ] Add debuggers for all languages to an array and install them with `:DSPInstall` automatically
 		* [ ] Look into snippets (especially for Kubernetes stuff, OR use `kubectl` here?)
-		* [ ] Make a `/lua` directory and nicely split things into modules
 	* [ ] `alacritty`
 		* Configure font-name (differs per OS, i.e. `FireMono NF` on Windows and `FiraMono Nerd Font` on Linux)
 	* [ ] `rg` (and completions)
@@ -45,6 +46,7 @@
 	* [ ] `exa` (and completions)
 	* [ ] `tmux`
 	* [ ] `fzf` (and completions)
+	* [ ] `sshfs` (for editing with local config on remote machines, uses `SFTP` to mount files, most `ssh` servers also have `SFTP` capabilities enabled)
 	* [ ] `docker` (and completions)
 	* [ ] `podman` and `buildah` (aliased to docker)
 	* [ ] `kubectl` (and completions)
@@ -75,13 +77,15 @@
 	* [ ] `joplin`
 	* [ ] `chrome`
 	* [ ] `zotero`
+	* [ ] `npm`
+	* [ ] `yarn` (some LS'es can only be installed using `yarn`)
 	* [ ] `nvm`
 	* [ ] `git`
 		* Git config file (see `jonhoo` for an example: https://github.com/jonhoo/configs/blob/master/shell/.config/git/config)
 	* [ ] `wireguard`
 	* [ ] `jq`
 	* [ ] `pgcli`
-* [ ] Switch to `fish`?
+* [ ] Switch to `zsh` (`fish` is not POSIX compliant) and set to default shell, such that we can use `/bin/sh` in shells scripts
 * [ ] Figure out how to deal with different use names (template dotfiles with correct username? There must be a better way...)
 * [ ] Figure out how to deal with private stuff / customizations per installation
 	* Use branches for customizations?

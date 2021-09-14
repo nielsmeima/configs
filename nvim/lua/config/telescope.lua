@@ -49,6 +49,13 @@ require("telescope").setup{
 		  override_generic_sorter = true,
 		  override_file_sorter = true,
 		  case_mode = "smart_case"
+	  },
+	  frecency = {
+		  show_scores = true,
+		  ignore_patterns = {"*.git/*", "*/tmp/*"},
+		  workspaces = {
+		  	["conf"]    = "/home/nielsmeima/configs",
+		  }
 	  }
   }
 }
@@ -68,3 +75,8 @@ map("n", "<Leader>qf",  [[<Cmd>:TodoQuickFix<CR>]], options)
 
 -- Extensions
 --require("telescope").load_extension("dap")
+
+-- frecency
+require("telescope").load_extension("frecency")
+map("n", "<leader><leader>", "<Cmd>lua require('telescope').extensions.frecency.frecency()<CR>", {noremap = true, silent = true})
+
