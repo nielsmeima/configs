@@ -1,0 +1,24 @@
+[user]
+	name = Niels Meima
+	email = nielsmeima1@gmail.com
+[ui "color"]
+	ui = always
+[color]
+	ui = true
+[core]
+	autocrlf = input
+	safecrlf = true
+[merge]
+	tool = nvim -d
+[alias]
+	c = commit
+	s = status
+	st = status
+	lg = log --oneline
+	last = log -1 HEAD
+[help]
+	autocorrect = 1
+[github]
+	user = nielsmeima
+
+

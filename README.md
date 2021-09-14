@@ -46,6 +46,7 @@
 	* [ ] `exa` (and completions)
 	* [ ] `tmux`
 	* [ ] `fzf` (and completions)
+	* [ ] `sshfs` (for editing with local config on remote machines, uses `SFTP` to mount files, most `ssh` servers also have `SFTP` capabilities enabled)
 	* [ ] `docker` (and completions)
 	* [ ] `podman` and `buildah` (aliased to docker)
 	* [ ] `kubectl` (and completions)
