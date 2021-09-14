@@ -123,6 +123,7 @@ if [ -f `which powerline-daemon` ]; then
     powerline-daemon -q
     POWERLINE_BASH_CONTINUATION=1
     POWERLINE_BASH_SELECT=1
+    source /usr/share/powerline/bindings/bash/powerline.sh
 fi
 #source /home/nielsmeima/.local/lib/python3.8/site-packages/powerline/bindings/bash/powerline.sh
 
@@ -146,7 +147,7 @@ alias vim="nvim"
 # ==================== Path ======================================
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="/home/nielsmeima/.local/bin/:$PATH"
-export PATH="/usr/local/julia-1.6.2/bin:$PATH"
+export PATH="/opt:$PATH"
 export PATH="/usr/local/go/bin:$PATH"
 
 
@@ -198,6 +199,24 @@ alias chrome_wsl="/mnt/c/Users/meiman/AppData/Local/Google/Chrome/Application/ch
 export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0.0
 export LIBGL_ALWAYS_INDIRECT=1
 
+# Podman (we do not have systemd)
+if [[ -z "$XDG_RUNTIME_DIR" ]]; then
+  export XDG_RUNTIME_DIR=/run/user/$UID
+  if [[ ! -d "$XDG_RUNTIME_DIR" ]]; then
+    export XDG_RUNTIME_DIR=/tmp/$USER-runtime
+    if [[ ! -d "$XDG_RUNTIME_DIR" ]]; then
+      mkdir -m 0700 "$XDG_RUNTIME_DIR"
+    fi
+  fi
+fi
+
 # ==================== Project aliases ===========================
 alias aa="cd ~/projects/auto-adapt/adaptation/"
 alias caq="cd ~/projects/erp-caq/forecasting/"
+. "$HOME/.cargo/env"
+
+alias luamake=/opt/lua-language-server/3rd/luamake/luamake
+
+export EDITOR=/opt/nvim
+export SUDO_EDITOR=/opt/nvim
+export VISUAL=/opt/nvim
