@@ -31,7 +31,7 @@ paq {
 	"windwp/nvim-autopairs";
 	"hrsh7th/nvim-compe";
 	"hoob3rt/lualine.nvim";
-	{"kyazdani42/nvim-web-devicons", opt = true};
+	--{"kyazdani42/nvim-web-devicons", opt = true};
 	"mfussenegger/nvim-dap";
 	"nvim-telescope/telescope-dap.nvim";
 	"theHamsta/nvim-dap-virtual-text";
