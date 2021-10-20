@@ -189,8 +189,8 @@ alias cmd.exe=/mnt/c/Windows/System32/cmd.exe
 alias chrome_wsl="/mnt/c/Users/meiman/AppData/Local/Google/Chrome/Application/chrome.exe"
 
 # X Server
-#export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0.0
-#export LIBGL_ALWAYS_INDIRECT=1
+export DISPLAY=$(awk '/nameserver / {print $2; exit}' /etc/resolv.conf 2>/dev/null):0.0
+export LIBGL_ALWAYS_INDIRECT=1
 
 # Podman (we do not have systemd)
 if [[ -z "$XDG_RUNTIME_DIR" ]]; then
@@ -214,3 +214,6 @@ alias luamake=/opt/lua-language-server/3rd/luamake/luamake
 export EDITOR=/opt/nvim
 export SUDO_EDITOR=/opt/nvim
 export VISUAL=/opt/nvim
+
+export GOPATH=$HOME/go
+export PATH="$GOPATH/bin:$PATH"
