@@ -24,6 +24,7 @@ paq {
 	"tpope/vim-obsession";
 	{"nvim-treesitter/nvim-treesitter", run = function() vim.cmd(":TSUpdate") end};
 	"neovim/nvim-lspconfig";
+	"williamboman/nvim-lsp-installer";
 	"nvim-lua/popup.nvim";
 	"nvim-lua/plenary.nvim";
 	"nvim-telescope/telescope.nvim";
@@ -31,13 +32,8 @@ paq {
 	"windwp/nvim-autopairs";
 	"hrsh7th/nvim-compe";
 	"hoob3rt/lualine.nvim";
-	--{"kyazdani42/nvim-web-devicons", opt = true};
-	"mfussenegger/nvim-dap";
-	"nvim-telescope/telescope-dap.nvim";
-	"theHamsta/nvim-dap-virtual-text";
 	"sudormrfbin/cheatsheet.nvim";
 	"tami5/sql.nvim";
 	"nvim-telescope/telescope-frecency.nvim";
 	"folke/todo-comments.nvim";
-	"megalithic/zk.nvim";
 }

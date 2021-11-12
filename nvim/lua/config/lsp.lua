@@ -33,13 +33,44 @@ local on_attach = function(client, bufnr)
 
 end
 
+-- local servers = require("consts").language_servers
+-- for _, lsp in ipairs(servers) do
+--   nvim_lsp[lsp].setup {
+--     on_attach = on_attach,
+--     flags = {
+--       debounce_text_changes = 150,
+--     }
+--   }
+-- end
+
 local servers = require("consts").language_servers
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    }
-  }
+local lsp_installer_servers = require'nvim-lsp-installer.servers'
+
+for _, server in ipairs(servers) do
+	local ok, lsp_installer_server = lsp_installer_servers.get_server(server)
+	if ok then
+	    if not lsp_installer_server:is_installed() then
+	        lsp_installer_server:install()
+	    end
+	end
 end
 
+local lsp_installer = require("nvim-lsp-installer")
+
+lsp_installer.on_server_ready(function(server)
+    -- local opts = {
+    --     flags = {
+    --     	debounce_text_changes = 150,	
+    --     }	
+    -- }
+    local opts = {}
+
+    -- (optional) Customize the options passed to the server
+    -- if server.name == "tsserver" then
+    --     opts.root_dir = function() ... end
+    -- end
+
+    -- This setup() function is exactly the same as lspconfig's setup function (:help lspconfig-quickstart)
+    server:setup(opts)
+    vim.cmd [[ do User LspAttachBuffers ]]
+end)
