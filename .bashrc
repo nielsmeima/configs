@@ -173,7 +173,6 @@ gdb() {
 		git push origin --delete $1
 	fi
 }
-
 # listing
 alias ll='exa -alF'
 alias l='exa -CF'
@@ -227,3 +226,9 @@ if [ ! -S "$DOCKER_SOCK" ]; then
     chgrp docker "$DOCKER_DIR"
     /mnt/c/Windows/System32/wsl.exe -d $DOCKER_DISTRO sh -c "nohup sudo -b dockerd < /dev/null > $DOCKER_DIR/dockerd.log 2>&1"
 fi
+
+
+export BARTIB_FILE="$HOME/hours.bartib"
+export PATH="$PATH:/opt/apache-maven-3.8.4/bin"
+export PATH="$PATH:/opt/rubygems-3.2.32/bin"
+export JAVA_HOME="/usr/lib/jvm/java-11-openjdk-amd64"

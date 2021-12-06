@@ -14,7 +14,10 @@ vim.g.clipboard = {
   cache_enable = 0,
 }
 vim.cmd("syntax on")
- 
+vim.cmd("set shiftwidth=4")
+
+vim.bo.expandtab = true
+
 vim.g.mapleader = " "
 vim.g.shellcommandflag = "-ic"
 

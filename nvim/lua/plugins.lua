@@ -36,4 +36,5 @@ paq {
 	"tami5/sql.nvim";
 	"nvim-telescope/telescope-frecency.nvim";
 	"folke/todo-comments.nvim";
+        "ggandor/lightspeed.nvim";
 }

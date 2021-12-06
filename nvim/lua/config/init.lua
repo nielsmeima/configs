@@ -1,6 +1,5 @@
 require("config.autopairs")
 require("config.compe")
-require("config.dap")
 require("config.lsp")
 require("config.lualine")
 require("config.telescope")
