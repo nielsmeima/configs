@@ -2,6 +2,9 @@
 vim.cmd("colorscheme tokyonight")
 vim.cmd("set clipboard^=unnamed,unnamedplus")
 vim.cmd("syntax on")
+vim.cmd("set shiftwidth=4")
+
+vim.bo.expandtab = true
 
 vim.g.mapleader = " "
 vim.g.shellcommandflag = "-ic"

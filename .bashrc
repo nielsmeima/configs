@@ -173,7 +173,6 @@ gdb() {
 		git push origin --delete $1
 	fi
 }
-
 # listing
 alias ll='exa -alF'
 alias l='exa -CF'
