@@ -4,37 +4,23 @@
 local execute = vim.api.nvim_command
 local fn = vim.fn
 
-local install_path = fn.stdpath("data").."/site/pack/paqs/start/paq-nvim"
 
-if fn.empty(fn.glob(install_path)) > 0 then
-  fn.system({"git", "clone", "--depth=1", "https://github.com/savq/paq-nvim.git", install_path})
-  execute("packadd paq-nvim")
-  -- Assume that if paq cannot be found, we also have not installed packages yet
-  -- Attempt to install packages automatically (NB: :PaqSync does :PaqInstall, :PaqUpdate and :PaqClean)
-  execute(":PaqSync")
-end
-
-
-local paq = require("paq")
-paq {
-	"avq/paq-nvim";
-	"folke/tokyonight.nvim";
-	{"iamcco/markdown-preview.nvim", run = function() vim.fn("mkdp#util#install()") end};
-	"junegunn/vim-easy-align";
-	"tpope/vim-obsession";
-	{"nvim-treesitter/nvim-treesitter", run = function() vim.cmd(":TSUpdate") end};
-	"neovim/nvim-lspconfig";
-	"williamboman/nvim-lsp-installer";
-	"nvim-lua/popup.nvim";
-	"nvim-lua/plenary.nvim";
-	"nvim-telescope/telescope.nvim";
-	{"nvim-telescope/telescope-fzf-native.nvim", run = "make"};
-	"windwp/nvim-autopairs";
-	"hrsh7th/nvim-compe";
-	"hoob3rt/lualine.nvim";
-	"sudormrfbin/cheatsheet.nvim";
-	"tami5/sql.nvim";
-	"nvim-telescope/telescope-frecency.nvim";
-	"folke/todo-comments.nvim";
-        "ggandor/lightspeed.nvim";
-}
+return require("packer").startup(function ()
+    -- Packer can manage itself
+    use 'wbthomason/packer.nvim'
+    use "folke/tokyonight.nvim"
+    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+    use "neovim/nvim-lspconfig"
+    use "williamboman/nvim-lsp-installer"
+    use "nvim-lua/popup.nvim"
+    use "nvim-lua/plenary.nvim"
+    use "nvim-telescope/telescope.nvim"
+    use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
+    use "windwp/nvim-autopairs"
+    use "hrsh7th/nvim-compe"
+    use "hoob3rt/lualine.nvim"
+    use "tami5/sql.nvim"
+    use "nvim-telescope/telescope-frecency.nvim"
+    use "folke/todo-comments.nvim"
+    use "ggandor/lightspeed.nvim"
+end)
