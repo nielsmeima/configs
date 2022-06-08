@@ -145,7 +145,6 @@ export PATH="/usr/local/go/bin:$PATH"
 
 
 # ==================== Kubernetes ================================
-export KUBECONFIG=/home/nielsmeima/.kube/config:/home/nielsmeima/projects/auto-adapt/config:/home/nielsmeima/.kube/ha
 
 source <(kubectl completion bash)
 alias k=kubectl
@@ -217,3 +216,4 @@ export VISUAL=/opt/nvim
 export GOPATH=$HOME/go
 export PATH="$GOPATH/bin:$PATH"
 
+export KUBECONFIG="$HOME/.kube/config:$HOME/projects/monitoring-control-services/.kube/config:$HOME/projects/erp-auto-adapt/kubeconfig:$HOME/projects/v2119/.kube/config"
