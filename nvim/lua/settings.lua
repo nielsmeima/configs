@@ -37,3 +37,5 @@ vim.wo.signcolumn = "yes"
 
 -- Copy indent from current line when starting new line
 vim.bo.autoindent = true
+
+vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float)

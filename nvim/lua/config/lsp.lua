@@ -33,16 +33,6 @@ local on_attach = function(client, bufnr)
 
 end
 
--- local servers = require("consts").language_servers
--- for _, lsp in ipairs(servers) do
---   nvim_lsp[lsp].setup {
---     on_attach = on_attach,
---     flags = {
---       debounce_text_changes = 150,
---     }
---   }
--- end
-
 local servers = require("consts").language_servers
 local lsp_installer_servers = require'nvim-lsp-installer.servers'
 
