@@ -17,7 +17,7 @@ vim.o.backup = false
 vim.o.writebackup = false
 
 -- Number of screen lines to use for the command-line
-vim.o.cmdheight = 2
+vim.o.cmdheight = 0
 
 -- Decrease update time
 vim.o.updatetime = 250
@@ -39,3 +39,18 @@ vim.wo.signcolumn = "yes"
 vim.bo.autoindent = true
 
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float)
+
+vim.g.clipboard = {
+
+  name = "win32yank-wsl",
+  copy = {
+    ["+"] = "win32yank.exe -i --crlf",
+    ["*"] = "win32yank.exe -i --crlf"
+  },
+  paste = {
+    ["+"] = "win32yank.exe -o --crlf",
+    ["*"] = "win32yank.exe -o --crlf"
+  },
+  cache_enable = 0,
+
+}
