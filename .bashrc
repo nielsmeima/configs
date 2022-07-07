@@ -126,6 +126,7 @@ if [ -f `which powerline-daemon` ]; then
     source /usr/share/powerline/bindings/bash/powerline.sh
 fi
 
+
 alias vi="nvim"
 alias vim="nvim"
 

@@ -1,10 +1,9 @@
-
 vim.cmd("colorscheme tokyonight")
 vim.cmd("set clipboard^=unnamed,unnamedplus")
 vim.cmd("syntax on")
 vim.cmd("set shiftwidth=4")
 
-vim.cmd [[ autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+vim.cmd [[ autocmd BufWritePre * lua vim.lsp.buf.format()]]
 
 vim.bo.expandtab = true
 
@@ -19,7 +18,7 @@ vim.o.backup = false
 vim.o.writebackup = false
 
 -- Number of screen lines to use for the command-line
-vim.o.cmdheight = 2
+vim.o.cmdheight = 0
 
 -- Decrease update time
 vim.o.updatetime = 250
@@ -28,7 +27,7 @@ vim.o.shortmess = vim.o.shortmess .. "c"
 
 -- Required for nvim-compe autocopmletion
 vim.o.completeopt = "menuone,noselect"
- 
+
 -- Make line numbers default
 vim.wo.number = true
 
@@ -43,16 +42,14 @@ vim.bo.autoindent = true
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float)
 
 vim.g.clipboard = {
-  name = "win32yank-wsl",
-  copy = {
-    ["+"] = "win32yank.exe -i --crlf",
-    ["*"] = "win32yank.exe -i --crlf"
-  },
-  paste = {
-    ["+"] = "win32yank.exe -o --crlf",
-    ["*"] = "win32yank.exe -o --crlf"
-  },
-  cache_enable = 0,
+    name = "win32yank-wsl",
+    copy = {
+        ["+"] = "win32yank.exe -i --crlf",
+        ["*"] = "win32yank.exe -i --crlf"
+    },
+    paste = {
+        ["+"] = "win32yank.exe -o --crlf",
+        ["*"] = "win32yank.exe -o --crlf"
+    },
+    cache_enable = 0,
 }
-
-

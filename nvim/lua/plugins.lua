@@ -1,11 +1,10 @@
-
 -- Bootstrap plugins by checking whether paq-nvim is already installed.
 -- If not, clone and packadd
 local execute = vim.api.nvim_command
 local fn = vim.fn
 
 
-return require("packer").startup(function ()
+return require("packer").startup(function()
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
     use "folke/tokyonight.nvim"
