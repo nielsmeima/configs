@@ -3,10 +3,9 @@ vim.cmd("set clipboard^=unnamed,unnamedplus")
 vim.cmd("syntax on")
 vim.cmd("set shiftwidth=4")
 
-vim.cmd [[ autocmd BufWritePre * lua vim.lsp.buf.format()]]
-
 vim.bo.expandtab = true
 
+vim.keymap.set('n', "<Space>", "<Nop>")
 vim.g.mapleader = " "
 vim.g.shellcommandflag = "-ic"
 
@@ -25,9 +24,6 @@ vim.o.updatetime = 250
 
 vim.o.shortmess = vim.o.shortmess .. "c"
 
--- Required for nvim-compe autocopmletion
-vim.o.completeopt = "menuone,noselect"
-
 -- Make line numbers default
 vim.wo.number = true
 
@@ -38,18 +34,3 @@ vim.wo.signcolumn = "yes"
 
 -- Copy indent from current line when starting new line
 vim.bo.autoindent = true
-
-vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float)
-
-vim.g.clipboard = {
-    name = "win32yank-wsl",
-    copy = {
-        ["+"] = "win32yank.exe -i --crlf",
-        ["*"] = "win32yank.exe -i --crlf"
-    },
-    paste = {
-        ["+"] = "win32yank.exe -o --crlf",
-        ["*"] = "win32yank.exe -o --crlf"
-    },
-    cache_enable = 0,
-}

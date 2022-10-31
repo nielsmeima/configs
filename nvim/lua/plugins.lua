@@ -16,10 +16,14 @@ return require("packer").startup(function()
     use "nvim-telescope/telescope.nvim"
     use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
     use "windwp/nvim-autopairs"
-    use "hrsh7th/nvim-compe"
     use "hoob3rt/lualine.nvim"
     use "tami5/sql.nvim"
     use "nvim-telescope/telescope-frecency.nvim"
     use "folke/todo-comments.nvim"
-    use "ggandor/lightspeed.nvim"
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/cmp-cmdline'
+    use "hrsh7th/nvim-cmp"
+    use "onsails/lspkind-nvim"
 end)

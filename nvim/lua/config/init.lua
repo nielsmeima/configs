@@ -1,6 +1,6 @@
-require("config.autopairs")
-require("config.compe")
 require("config.lsp")
+require("config.cmp")
+require("config.autopairs")
 require("config.lualine")
 require("config.telescope")
 require("config.todo_comments")
