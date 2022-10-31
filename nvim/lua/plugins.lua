@@ -1,9 +1,5 @@
 -- Bootstrap plugins by checking whether paq-nvim is already installed.
 -- If not, clone and packadd
-local execute = vim.api.nvim_command
-local fn = vim.fn
-
-
 return require("packer").startup(function()
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
@@ -17,8 +13,7 @@ return require("packer").startup(function()
     use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
     use "windwp/nvim-autopairs"
     use "hoob3rt/lualine.nvim"
-    use "tami5/sql.nvim"
-    use "nvim-telescope/telescope-frecency.nvim"
+    use { "nvim-telescope/telescope-frecency.nvim", requires = { "kkharji/sqlite.lua" } }
     use "folke/todo-comments.nvim"
     use 'hrsh7th/cmp-nvim-lsp'
     use 'hrsh7th/cmp-buffer'

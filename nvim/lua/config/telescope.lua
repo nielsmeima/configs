@@ -60,9 +60,7 @@ require("telescope").setup {
 }
 
 -- Mappings
-options = { noremap = true, silent = true }
---local bufopts = { noremap = true, silent = true, buffer = bufnr }
--- vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+local options = {}
 
 vim.keymap.set("n", "<leader>ff", require("telescope.builtin").find_files, options)
 vim.keymap.set("n", "<leader>fg", require("telescope.builtin").live_grep, options)
@@ -78,10 +76,6 @@ vim.keymap.set("n", "<leader>tt", [[<Cmd>:TodoTelescope<CR>]], options)
 -- TODO: find out how to put search results into qflist
 --map("i", "<Leader>qf",  [[<Cmd>lua require("telescope.builtin").quickfix()<CR>]], options)
 
--- Extensions
---require("telescope").load_extension("dap")
-
 -- frecency
---require("telescope").load_extension("frecency")
---map("n", "<leader><leader>", "<Cmd>lua require('telescope').extensions.frecency.frecency()<CR>",
---    { noremap = true, silent = true })
+require("telescope").load_extension("frecency")
+vim.keymap.set("n", "<leader><leader>", "<Cmd>lua require('telescope').extensions.frecency.frecency()<CR>", options)

@@ -17,7 +17,7 @@ vim.o.backup = false
 vim.o.writebackup = false
 
 -- Number of screen lines to use for the command-line
-vim.o.cmdheight = 0
+vim.o.cmdheight = 1
 
 -- Decrease update time
 vim.o.updatetime = 250
