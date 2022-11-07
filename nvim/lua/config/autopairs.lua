@@ -1,1 +1,1 @@
--- If you want insert `(` after select function or method item
+require("nvim-autopairs").setup {}

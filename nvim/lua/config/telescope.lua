@@ -71,11 +71,3 @@ vim.keymap.set("n", "<leader>ws", require("telescope.builtin").lsp_workspace_sym
 vim.keymap.set("n", "<leader>td", require("telescope.builtin").diagnostics, options)
 
 vim.keymap.set("n", "<leader>tt", [[<Cmd>:TodoTelescope<CR>]], options)
-
-
--- TODO: find out how to put search results into qflist
---map("i", "<Leader>qf",  [[<Cmd>lua require("telescope.builtin").quickfix()<CR>]], options)
-
--- frecency
-require("telescope").load_extension("frecency")
-vim.keymap.set("n", "<leader><leader>", "<Cmd>lua require('telescope').extensions.frecency.frecency()<CR>", options)

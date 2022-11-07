@@ -9,4 +9,3 @@ require("plugins")
 
 -- Plugins Configuration
 require("config")
-

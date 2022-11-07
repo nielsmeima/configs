@@ -1,5 +1,4 @@
-
-options = { noremap = true }
+local options = { noremap = true }
 
 vim.keymap.set("n", "n", "nzz", options)
 vim.keymap.set("n", "N", "Nzz", options)
@@ -17,7 +16,6 @@ vim.keymap.set("", "k", "j", options)
 vim.keymap.set("", "j", "h", options)
 vim.keymap.set("", "J", "^", options)
 vim.keymap.set("", "K", "$", options)
-vim.keymap.set("n", "<leader><leader>", "<c-^>", options)
 vim.keymap.set("i", "<up>", "<nop>", options)
 vim.keymap.set("i", "<down>", "<nop>", options)
 vim.keymap.set("i", "<left>", "<nop>", options)
