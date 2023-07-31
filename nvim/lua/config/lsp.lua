@@ -45,9 +45,19 @@ end
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 for _, lsp in pairs(servers) do
-	require('lspconfig')[lsp.name].setup {
-		on_attach = on_attach,
-		cmd = { "/usr/local/bin/ra-multiplex", "client" },
-		settings = lsp.settings
-	}
+
+	
+	local settings = lsp.settings
+	settings['on_attach'] = on_attach
+
+	if lsp['cmd'] ~= nil then
+	    settings['cmd'] = lsp['cmd']
+	end
+	
+	require('lspconfig')[lsp.name].setup(settings)
+	-- require('lspconfig')[lsp.name].setup {
+	-- 	on_attach = on_attach,
+	-- 	cmd = { "/usr/local/bin/ra-multiplex", "client" },
+	-- 	settings = lsp.settings
+	-- }
 end
