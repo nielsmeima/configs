@@ -25,6 +25,14 @@ local language_servers = {
 		settings = {}
 	},
 	{
+		name = "rnix",
+		settings = {}
+	},
+	{
+		name = "marksman",
+		settings = {}
+	},
+	{
 		name = "pyright",
 		settings = {}
 	},
@@ -36,17 +44,21 @@ local language_servers = {
 				server = {
 					path = "/Users/nielsmeima/.local/share/nvim/mason/bin/rust-analyzer"
 				},
-				checkOnSave = {
-					command = "clippy"
-				},
-				cargo = {
-					buildScripts = {
-						enable = true,
+				completion = {
+					autoimport = {
+						enable = true
 					},
 				},
-				procMacro = {
-					enable = true
+				checkOnSave = true,
+				check = {
+					command = "clippy",
 				},
+				cargo = {
+					autoreload = true,
+					buildScripts = {
+						enable = true,
+					}
+				}
 			}
 		}
 	},
@@ -56,6 +68,10 @@ local language_servers = {
 	},
 	{
 		name = "lua_ls",
+		settings = {}
+	},
+	{
+		name = "taplo",
 		settings = {}
 	},
 	{

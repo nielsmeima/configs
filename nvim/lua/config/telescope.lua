@@ -68,6 +68,6 @@ vim.keymap.set("n", "<leader>gf", require("telescope.builtin").git_files, option
 vim.keymap.set("n", "<leader>fb", require("telescope.builtin").buffers, options)
 vim.keymap.set("n", "<leader>bs", require("telescope.builtin").lsp_document_symbols, options)
 vim.keymap.set("n", "<leader>ws", require("telescope.builtin").lsp_workspace_symbols, options)
-vim.keymap.set("n", "<leader>td", require("telescope.builtin").diagnostics, options)
-
+vim.keymap.set("n", "<leader>gr", require("telescope.builtin").lsp_references, options)
+vim.keymap.set("n", "<leader>di", require("telescope.builtin").diagnostics, options)
 vim.keymap.set("n", "<leader>tt", [[<Cmd>:TodoTelescope<CR>]], options)

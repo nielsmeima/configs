@@ -38,26 +38,58 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
 	vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
 	vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-	vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+	-- vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
 	--vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
+
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 for _, lsp in pairs(servers) do
-
-	
 	local settings = lsp.settings
-	settings['on_attach'] = on_attach
 
-	if lsp['cmd'] ~= nil then
-	    settings['cmd'] = lsp['cmd']
+	if lsp.name ~= "rust_analyzer" then
+		if lsp['cmd'] ~= nil then
+			settings['cmd'] = lsp['cmd']
+		end
+
+		require('lspconfig')[lsp.name].setup {
+			on_attach = on_attach,
+			-- cmd = { "/usr/local/bin/ra-multiplex", "client" },
+			capabilities = capabilities,
+			settings = lsp.settings
+
+		}
 	end
-	
-	require('lspconfig')[lsp.name].setup(settings)
-	-- require('lspconfig')[lsp.name].setup {
-	-- 	on_attach = on_attach,
-	-- 	cmd = { "/usr/local/bin/ra-multiplex", "client" },
-	-- 	settings = lsp.settings
-	-- }
 end
+
+require('lspconfig').rust_analyzer.setup {
+	on_attach = on_attach,
+	capabilities = capabilities,
+	-- cmd = { "/usr/local/bin/ra-multiplex", "client" },
+	settings = {
+		["rust-analyzer"] = {
+			server = {
+				path = "/Users/nielsmeima/.local/share/nvim/mason/bin/rust-analyzer"
+			},
+			completion = {
+				autoimport = {
+					enable = true
+				},
+			},
+			checkOnSave = true,
+			check = {
+				command = "clippy"
+				-- extraArgs = { "--target", "x86_64-unknown-linux-musl" }
+			},
+			cargo = {
+				autoreload = true,
+				buildScripts = {
+					enable = true,
+				}
+			}
+		}
+	}
+}

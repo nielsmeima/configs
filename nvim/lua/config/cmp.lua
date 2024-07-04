@@ -44,11 +44,11 @@ lspkind.init({
 	}
 })
 
-local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-cmp.event:on(
-	'confirm_done',
-	cmp_autopairs.on_confirm_done()
-)
+-- local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+-- cmp.event:on(
+-- 	'confirm_done',
+-- 	cmp_autopairs.on_confirm_done()
+-- )
 
 cmp.setup({
 	formatting = {
@@ -63,6 +63,10 @@ cmp.setup({
 			}
 		}
 	},
+	completion = { 
+	    completeopt = "noselect",
+	},
+	preselect = cmp.PreselectMode.None,
 	experimental = { native_menu = false, ghost_text = false },
 	snippet = {
 		expand = function(args)
@@ -103,6 +107,7 @@ cmp.setup({
 	},
 	sources = {
 		{ name = "nvim_lsp" },
+		{ name = "nvim_lsp_signature_help"},
 		{ name = 'luasnip' },
 		{ name = "buffer" },
 		{ name = "path" },

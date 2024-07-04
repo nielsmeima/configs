@@ -21,8 +21,9 @@ return require("packer").startup(function()
 	use "hrsh7th/cmp-buffer"
 	use "hrsh7th/cmp-path"
 	use "hrsh7th/cmp-cmdline"
+	use "hrsh7th/cmp-nvim-lsp-signature-help"
 	use "onsails/lspkind-nvim"
-	-- use { "alopatindev/cargo-limit", run = "cargo install cargo-limit nvim-send" }
+	use { "alopatindev/cargo-limit", commit = "df5eebc", run = "cargo install cargo-limit nvim-send" }
 	use { "L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*" }
 	use "rafamadriz/friendly-snippets"
 	use "hrsh7th/nvim-cmp"
@@ -30,7 +31,7 @@ return require("packer").startup(function()
 	use "numToStr/Comment.nvim"
 	use {
 		'saecki/crates.nvim',
-		tag = 'v0.3.0',
+		tag = 'stable',
 		requires = { 'nvim-lua/plenary.nvim' }
 	}
 end)

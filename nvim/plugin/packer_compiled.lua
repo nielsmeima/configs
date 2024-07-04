@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/Users/nielsmeima/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["cargo-limit"] = {
+    loaded = true,
+    path = "/Users/nielsmeima/.local/share/nvim/site/pack/packer/start/cargo-limit",
+    url = "https://github.com/alopatindev/cargo-limit"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/nielsmeima/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -98,6 +103,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nielsmeima/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
     url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-nvim-lsp-signature-help"] = {
+    loaded = true,
+    path = "/Users/nielsmeima/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp-signature-help",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp-signature-help"
   },
   ["cmp-path"] = {
     loaded = true,

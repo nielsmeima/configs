@@ -20,3 +20,5 @@ vim.keymap.set("i", "<up>", "<nop>", options)
 vim.keymap.set("i", "<down>", "<nop>", options)
 vim.keymap.set("i", "<left>", "<nop>", options)
 vim.keymap.set("i", "<right>", "<nop>", options)
+
+vim.keymap.set("n", "<leader>cr", [[<Cmd>:CargoReload<CR>]], options)
