@@ -1,3 +1,5 @@
+vim.g.have_nerd_font = true
+
 -- Non-plugin key mappings
 require("mappings")
 
@@ -9,3 +11,4 @@ require("plugins")
 
 -- Plugins Configuration
 require("config")
+

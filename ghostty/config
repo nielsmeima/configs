@@ -1,0 +1,18 @@
+click-repeat-interval = 500
+auto-update-channel = stable
+font-size = 18
+cursor-style-blink = false
+window-padding-x = 8
+window-padding-y = 8
+
+# https://github.com/ghostty-org/ghostty/discussions/3483
+macos-option-as-alt = true
+# keybind = alt+left=unbind
+# keybind = alt+right=unbind
+
+# command = /bin/zsh
+initial-command = /bin/zsh -c "zellij -l welcome attach --create welcome"
+shell-integration = zsh
+quit-after-last-window-closed = true
+macos-titlebar-proxy-icon = hidden
+title = " "

@@ -14,35 +14,35 @@ local feedkey = function(key, mode)
 		mode, true)
 end
 
-lspkind.init({
-	symbol_map = {
-		Text = "",
-		Method = "",
-		Function = "",
-		Constructor = "",
-		Field = "ﰠ",
-		Variable = "",
-		Class = "ﴯ",
-		Interface = "",
-		Module = "",
-		Property = "ﰠ",
-		Unit = "塞",
-		Value = "",
-		Enum = "",
-		Keyword = "",
-		Snippet = "",
-		Color = "",
-		File = "",
-		Reference = "",
-		Folder = "",
-		EnumMember = "",
-		Constant = "",
-		Struct = "פּ",
-		Event = "",
-		Operator = "",
-		TypeParameter = ""
-	}
-})
+-- lspkind.init({
+-- 	symbol_map = {
+-- 		Text = "",
+-- 		Method = "",
+-- 		Function = "",
+-- 		Constructor = "",
+-- 		Field = "ﰠ",
+-- 		Variable = "",
+-- 		Class = "ﴯ",
+-- 		Interface = "",
+-- 		Module = "",
+-- 		Property = "ﰠ",
+-- 		Unit = "塞",
+-- 		Value = "",
+-- 		Enum = "",
+-- 		Keyword = "",
+-- 		Snippet = "",
+-- 		Color = "",
+-- 		File = "",
+-- 		Reference = "",
+-- 		Folder = "",
+-- 		EnumMember = "",
+-- 		Constant = "",
+-- 		Struct = "פּ",
+-- 		Event = "",
+-- 		Operator = "",
+-- 		TypeParameter = ""
+-- 	}
+-- })
 
 -- local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 -- cmp.event:on(
@@ -53,18 +53,19 @@ lspkind.init({
 cmp.setup({
 	formatting = {
 		format = lspkind.cmp_format {
-			with_text = false,
+			mode = "symbol",
+			-- with_text = false,
 			maxwidth = 50,
 			menu = {
 				buffer = "BUF",
 				luasnip = "SNIP",
 				nvim_lsp = "LSP",
 				path = "PATH",
-			}
+			},
 		}
 	},
-	completion = { 
-	    completeopt = "noselect",
+	completion = {
+		completeopt = "noselect",
 	},
 	preselect = cmp.PreselectMode.None,
 	experimental = { native_menu = false, ghost_text = false },
@@ -107,7 +108,7 @@ cmp.setup({
 	},
 	sources = {
 		{ name = "nvim_lsp" },
-		{ name = "nvim_lsp_signature_help"},
+		{ name = "nvim_lsp_signature_help" },
 		{ name = 'luasnip' },
 		{ name = "buffer" },
 		{ name = "path" },

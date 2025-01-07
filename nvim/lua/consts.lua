@@ -33,8 +33,23 @@ local language_servers = {
 		settings = {}
 	},
 	{
-		name = "pyright",
+		name = "ruff",
 		settings = {}
+	},
+	{
+		name = "pyright",
+		settings = {
+ 		   pyright = {
+ 		     -- Using Ruff's import organizer
+ 		     disableOrganizeImports = true,
+ 		   },
+ 		   python = {
+ 		     analysis = {
+ 		       -- Ignore all files for analysis to exclusively use Ruff for linting
+ 		       ignore = { '*' },
+ 		     },
+ 		   },
+ 		 },
 	},
 	{
 		name = "rust_analyzer",
@@ -79,7 +94,7 @@ local language_servers = {
 		settings = {}
 	},
 	{
-		name = "tsserver",
+		name = "ts_ls",
 		settings = {}
 	},
 	{

@@ -26,7 +26,13 @@ local on_attach = function(client, bufnr)
 	-- See `:help vim.lsp.*` for documentation on any of the below functions
 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
 	vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-	vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+
+	if vim.g.vscode then
+	    -- VSCode extension
+	else
+	    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+	    -- ordinary Neovim
+	end
 	vim.keymap.set('n', '<space>h', vim.lsp.buf.hover, bufopts)
 	vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
 	vim.keymap.set('n', '<space>s', vim.lsp.buf.signature_help, bufopts)
