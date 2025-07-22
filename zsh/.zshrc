@@ -3,6 +3,9 @@ export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="/Library/TeX/texbin/:$PATH"
 
+source ~/.openai
+source ~/.gemini
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 # Set name of the theme to load --- if set to "random", it will
@@ -72,7 +75,7 @@ ZSH_CUSTOM=/Users/nielsmeima/configs/zsh/.oh-my-zsh/custom
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git fzf kubectl docker uv)
+plugins=(git fzf kubectl docker uv direnv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -118,7 +121,7 @@ export VISUAL="/opt/homebrew/bin/nvim"
 setopt no_complete_aliases
 eval "$(zellij setup --generate-auto-start zsh)"
 eval "$(zoxide init --cmd j zsh)"
-
+# eval "$(starship init zsh)"
 eval "$(atuin init zsh)"
 
 
